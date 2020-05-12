@@ -3,6 +3,7 @@ const asyncHandler = require('express-async-handler');
 const bunyan = require('bunyan');
 
 const handleHealth = require('./src/handlers/handleHealth');
+const insertCredits = require('./src/db/insertCredits');
 
 const logger = bunyan.createLogger({
     level: 'info',

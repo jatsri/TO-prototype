@@ -21,6 +21,8 @@
     "bunyan": "^1.8.12",
     "express": "^4.17.1",
     "express-async-handler": "^1.1.4",
+    "pg-copy-streams": "^4.0.0",
+    "stream": "0.0.2",
     "validator": "^13.0.0"
   },
   "devDependencies": {
