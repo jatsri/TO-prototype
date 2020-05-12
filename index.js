@@ -1,5 +1,6 @@
 require('dotenv').config();
 const express = require('express');
+const { static } = require('express');
 const asyncHandler = require('express-async-handler');
 const bodyParser = require('body-parser');
 require('body-parser-csv')(bodyParser);
@@ -27,6 +28,11 @@ app.use(
     })
 );
 
+app.use((err, req, res, next) => {
+    logger.error(err, 'Unexpected error');
+    res.status(500).send('Internal Server Error');
+});
+
 app.listen(port, () => {
     logger.info(`app is listening on port ${port}`);
 });
@@ -38,5 +44,10 @@ app.post(
     asyncHandler(
         handleCredits.bind(null, { insertCredits, validateRows, logger })
     )
+);
+
+app.use(
+    '/credits/:tourOperatorId/upload',
+    static('public/creditsUploadPage')
 );
 
