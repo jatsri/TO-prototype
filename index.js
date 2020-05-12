@@ -1,5 +1,7 @@
 const express = require('express');
 const asyncHandler = require('express-async-handler');
+const bodyParser = require('body-parser');
+require('body-parser-csv')(bodyParser);
 const bunyan = require('bunyan');
 
 const handleHealth = require('./src/handlers/handleHealth');
@@ -14,6 +16,14 @@ const logger = bunyan.createLogger({
 
 const port = 3000;
 const app = express();
+
+app.use(
+    bodyParser.csv({
+        csvParseOptions: {
+            fastcsvParams: {},
+        },
+    })
+);
 
 app.listen(port, () => {
     logger.info(`app is listening on port ${port}`);
