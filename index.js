@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const asyncHandler = require('express-async-handler');
 const bodyParser = require('body-parser');
