@@ -2,7 +2,7 @@ const validator = require('validator');
 
 const { getConnection } = require('../db/query');
 
-module.exports = ({ insertCredits, validateRows }, req, res) => {
+module.exports = ({ insertCredits, validateRows, logger }, req, res) => {
     const body = req.body;
     const tourOperatorId = req.params.tourOperatorId;
     const isValidTourOperatorUUID = validator.isUUID(tourOperatorId);
@@ -40,7 +40,7 @@ module.exports = ({ insertCredits, validateRows }, req, res) => {
         })
     );
 
-    return insertCredits({ getConnection }, credits).then(() =>
+    return insertCredits({ logger, getConnection }, credits).then(() =>
         res.status(201).send('Credits created')
     );
 };
