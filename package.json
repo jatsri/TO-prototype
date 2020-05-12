@@ -18,7 +18,8 @@
   },
   "homepage": "https://github.com/jatsri/TO-prototype#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "express-async-handler": "^1.1.4"
   },
   "devDependencies": {
     "node-dev": "^4.0.0"
