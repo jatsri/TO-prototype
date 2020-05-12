@@ -4,6 +4,7 @@ const bunyan = require('bunyan');
 
 const handleHealth = require('./src/handlers/handleHealth');
 const insertCredits = require('./src/db/insertCredits');
+const validateRows = require('./src/lib/validateRows');
 
 const logger = bunyan.createLogger({
     level: 'info',
