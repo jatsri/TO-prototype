@@ -5,6 +5,7 @@ require('body-parser-csv')(bodyParser);
 const bunyan = require('bunyan');
 
 const handleHealth = require('./src/handlers/handleHealth');
+const handleCredits = require('./src/handlers/handleCredits');
 const insertCredits = require('./src/db/insertCredits');
 const validateRows = require('./src/lib/validateRows');
 
