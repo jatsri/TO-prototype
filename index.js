@@ -12,3 +12,11 @@ app.listen(port, () => {
 });
 
 app.get('/health', asyncHandler(handleHealth));
+
+app.post(
+    '/credits/:tourOperatorId',
+    asyncHandler(
+        handleCredits.bind(null, { insertCredits, validateRows, logger })
+    )
+);
+
