@@ -22,6 +22,11 @@
     "express-async-handler": "^1.1.4"
   },
   "devDependencies": {
-    "node-dev": "^4.0.0"
+    "chai": "^4.2.0",
+    "chai-as-promised": "^7.1.1",
+    "mocha": "^7.1.2",
+    "node-dev": "^4.0.0",
+    "sinon": "^9.0.2",
+    "sinon-chai": "^3.5.0"
   }
 }
